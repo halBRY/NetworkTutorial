@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7238423301324935538}
   - component: {fileID: 5362465965935059173}
   - component: {fileID: 3441716721163108884}
-  - component: {fileID: 7420607166992267156}
   - component: {fileID: 1636851907755379682}
   - component: {fileID: 5003644451465963772}
   - component: {fileID: 2889829323399363128}
@@ -115,26 +114,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7420607166992267156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4109263471597884901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2222387340
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!114 &1636851907755379682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,8 +126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5447b07486943f42aae293af48a1eae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 6287622623563197193}
-  audioListener: {fileID: 8574037072534479896}
   colors:
   - {r: 0.76470596, g: 0.45882356, b: 0.45882356, a: 0}
   - {r: 0.45882356, g: 0.7176471, b: 0.76470596, a: 0}

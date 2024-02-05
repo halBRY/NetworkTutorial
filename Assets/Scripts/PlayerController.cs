@@ -6,8 +6,10 @@ using Unity.Netcode;
 
 public class PlayerController : NetworkBehaviour
 {   
-    public Camera camera;
-    public AudioListener audioListener;
+    [SerializeField]
+    private Camera camera;
+    [SerializeField]
+    private AudioListener audioListener;
 
     // create a list of colors
     public List<Color> colors = new List<Color>();
@@ -17,7 +19,6 @@ public class PlayerController : NetworkBehaviour
     private GameObject spawnedPrefab;
     // save the instantiated prefab
     private GameObject instantiatedPrefab;
-
 
     private CharacterController controller;
     private PlayerInput playerInput;
@@ -35,6 +36,8 @@ public class PlayerController : NetworkBehaviour
 
     private Transform cameraTransform;
 
+    [SerializeField]
+    private NetworkObject networkObject;
 
     private void Start()
     {
@@ -42,6 +45,8 @@ public class PlayerController : NetworkBehaviour
         playerInput = GetComponent<PlayerInput>();
 
         cameraTransform = camera.transform;
+
+        //networkObject = GetComponentInParent<NetworkObject>();
 
         moveAction = playerInput.actions["Move"];
         jumpAction = playerInput.actions["Jump"];
@@ -52,7 +57,7 @@ public class PlayerController : NetworkBehaviour
     void Update()
     {
 
-        if (!IsOwner) return;
+        if (!networkObject.IsOwner) return;
 
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && playerVelocity.y < 0)
@@ -95,7 +100,7 @@ public class PlayerController : NetworkBehaviour
         GetComponent<MeshRenderer>().material.color = colors[(int)OwnerClientId];
 
         // check if the player is the owner of the object
-        if (!IsOwner) return;
+        if (!networkObject.IsOwner) return;
         // if the player is the owner of the object
         // enable the camera and the audio listener
         audioListener.enabled = true;
