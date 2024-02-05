@@ -1,68 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1679754584337382131
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2803870167665704322}
-  m_Layer: 0
-  m_Name: CameraPlacement
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2803870167665704322
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1679754584337382131}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1532227581051028872}
-  m_Father: {fileID: 7885201378932988825}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3530991317542818384
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5289610838582335307}
-  m_Layer: 0
-  m_Name: Cannon
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5289610838582335307
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3530991317542818384}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.384, z: 0.309}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7885201378932988825}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4109263471597884901
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,10 +13,12 @@ GameObject:
   - component: {fileID: 5362465965935059173}
   - component: {fileID: 3441716721163108884}
   - component: {fileID: 7420607166992267156}
-  - component: {fileID: 6256100708000521091}
+  - component: {fileID: 1636851907755379682}
   - component: {fileID: 5003644451465963772}
   - component: {fileID: 2889829323399363128}
   - component: {fileID: 2184126589073975251}
+  - component: {fileID: 8695241394855572856}
+  - component: {fileID: 2138927799564888737}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -100,8 +39,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5289610838582335307}
-  - {fileID: 2803870167665704322}
+  - {fileID: 1532227581051028872}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7238423301324935538
@@ -197,7 +135,7 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
---- !u!114 &6256100708000521091
+--- !u!114 &1636851907755379682
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -206,18 +144,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 4109263471597884901}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 052dc4dbf236280409266685e74b5381, type: 3}
+  m_Script: {fileID: 11500000, guid: b5447b07486943f42aae293af48a1eae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  colors:
-  - {r: 0.764151, g: 0.45704877, b: 0.45704877, a: 1}
-  - {r: 0.45882353, g: 0.71665156, b: 0.7647059, a: 1}
-  spawnedPrefab: {fileID: 1790337183111277750, guid: a3918cf6dc969694abbfead1fa4ced7b, type: 3}
-  cannon: {fileID: 3530991317542818384}
-  bullet: {fileID: 7077846977210116156, guid: 91c3e340c263ceb4585e4db37be0a9bf, type: 3}
+  camera: {fileID: 6287622623563197193}
   audioListener: {fileID: 8574037072534479896}
-  playerCamera: {fileID: 6287622623563197193}
+  colors:
+  - {r: 0.76470596, g: 0.45882356, b: 0.45882356, a: 0}
+  - {r: 0.45882356, g: 0.7176471, b: 0.76470596, a: 0}
+  spawnedPrefab: {fileID: 1790337183111277750, guid: a3918cf6dc969694abbfead1fa4ced7b, type: 3}
 --- !u!114 &5003644451465963772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,6 +222,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!143 &8695241394855572856
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4109263471597884901}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2138927799564888737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4109263471597884901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 5ecbee37546a5a84db5fa16d149232dc, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 6287622623563197193}
 --- !u!1 &5944139277921445346
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,6 +289,7 @@ GameObject:
   - component: {fileID: 1532227581051028872}
   - component: {fileID: 6287622623563197193}
   - component: {fileID: 8574037072534479896}
+  - component: {fileID: 6354531462629159695}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -313,12 +305,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5944139277921445346}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.83, z: -2.37}
+  m_LocalRotation: {x: 0.12282959, y: -0.0041011083, z: 0.0005075854, w: 0.9924192}
+  m_LocalPosition: {x: 0.040142193, y: 1.9908518, z: -4.850925}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2803870167665704322}
+  m_Father: {fileID: 7885201378932988825}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &6287622623563197193
 Camera:
@@ -351,11 +343,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
+  near clip plane: 0.1
+  far clip plane: 5000
+  field of view: 40
   orthographic: 0
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -379,3 +371,37 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5944139277921445346}
   m_Enabled: 0
+--- !u!114 &6354531462629159695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5944139277921445346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowDebugText: 0
+  m_ShowCameraFrustum: 1
+  m_IgnoreTimeScale: 0
+  m_WorldUpOverride: {fileID: 0}
+  m_UpdateMethod: 2
+  m_BlendUpdateMethod: 1
+  m_DefaultBlend:
+    m_Style: 1
+    m_Time: 2
+    m_CustomCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  m_CustomBlends: {fileID: 0}
+  m_CameraCutEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraActivatedEvent:
+    m_PersistentCalls:
+      m_Calls: []

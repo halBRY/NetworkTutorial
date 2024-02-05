@@ -745,13 +745,13 @@ PlayerSettings:
   hmiLogStartupTiming: 0
   hmiCpuConfiguration: 
   apiCompatibilityLevel: 6
-  activeInputHandler: 0
+  activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 10beb2ca-5b19-4d21-843e-5e84d056dba0
+  cloudProjectId: a3ddfd7c-3ed1-45de-9fea-2e196350042e
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: NetworkTutorial
-  organizationId: halbrynteson
+  projectName: NetworkTutorial (1)
+  organizationId: hbrynt2
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
