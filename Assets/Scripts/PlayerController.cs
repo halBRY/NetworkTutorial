@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Unity.Netcode;
+using Cinemachine;
 
 public class PlayerController : NetworkBehaviour
 {   
@@ -39,6 +40,8 @@ public class PlayerController : NetworkBehaviour
     [SerializeField]
     private NetworkObject networkObject;
 
+    public CinemachineVirtualCamera cineCamera;
+
     private void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -56,8 +59,19 @@ public class PlayerController : NetworkBehaviour
 
     void Update()
     {
+        if(IsOwner) 
+        { 
+            Debug.Log("am the owner");
+            cineCamera.m_Priority = 10; 
+        }
 
-        if (!networkObject.IsOwner) return;
+        if(IsOwner == false) 
+        { 
+            Debug.Log("not the owner");
+            cineCamera.m_Priority = 0; 
+        }
+
+        if (!IsOwner) return;
 
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && playerVelocity.y < 0)
@@ -100,7 +114,7 @@ public class PlayerController : NetworkBehaviour
         GetComponent<MeshRenderer>().material.color = colors[(int)OwnerClientId];
 
         // check if the player is the owner of the object
-        if (!networkObject.IsOwner) return;
+        if (!IsOwner) return;
         // if the player is the owner of the object
         // enable the camera and the audio listener
         audioListener.enabled = true;
