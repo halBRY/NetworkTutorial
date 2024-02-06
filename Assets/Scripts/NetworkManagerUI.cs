@@ -12,8 +12,8 @@ public class NetworkManagerUI : MonoBehaviour
 {
     // [SerializeField] attribute is used to make the private variables accessible
     // within the Unity editor without making them public
-    [SerializeField] private Button host_btn;
-    [SerializeField] private Button client_btn;
+    public Button host_btn;
+    public Button client_btn;
 
     //text to display the join code
     [SerializeField] private TMP_Text joinCodeText;
@@ -22,7 +22,7 @@ public class NetworkManagerUI : MonoBehaviour
     // join code
     public string joinCode;
 
-    [SerializeField] private TMP_InputField joinCodeInputField;
+    public TMP_InputField joinCodeInputField;
     // after all objectes are created and initialized
     // Awake() method is called and executed
     // Awake is always called before any Start functions.
@@ -58,6 +58,10 @@ public class NetworkManagerUI : MonoBehaviour
     // Start host relay
     public async void StartHostRelay()
     {
+        host_btn.gameObject.SetActive(false);
+        client_btn.gameObject.SetActive(false);
+        joinCodeInputField.gameObject.SetActive(false); 
+
         Allocation allocation = null;
         try
         {
@@ -90,6 +94,10 @@ public class NetworkManagerUI : MonoBehaviour
     {
         JoinAllocation joinAllocation = null;
 
+        host_btn.gameObject.SetActive(false);
+        client_btn.gameObject.SetActive(false);
+        joinCodeInputField.gameObject.SetActive(false); 
+
         try
         {
             // join the allocation
@@ -107,6 +115,10 @@ public class NetworkManagerUI : MonoBehaviour
 
         //Start the client
         NetworkManager.Singleton.StartClient();
+
+        host_btn.enabled = false;
+        client_btn.enabled = false;
+        joinCodeInputField.enabled = false;
     }
 
 }
