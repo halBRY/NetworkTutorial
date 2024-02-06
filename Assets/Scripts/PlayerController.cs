@@ -62,6 +62,9 @@ public class PlayerController : NetworkBehaviour
         if(IsOwner) 
         { 
             Debug.Log("am the owner");
+
+            Debug.Log((int)OwnerClientId);
+
             cineCamera.m_Priority = 10; 
         }
 
