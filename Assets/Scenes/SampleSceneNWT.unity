@@ -846,7 +846,7 @@ MonoBehaviour:
     EnableNetworkLogs: 1
     OldPrefabList: []
   RunInBackground: 1
-  LogLevel: 1
+  LogLevel: 0
 --- !u!4 &633810865
 Transform:
   m_ObjectHideFlags: 0
@@ -1124,11 +1124,11 @@ RectTransform:
   - {fileID: 143424580}
   m_Father: {fileID: 1990279533}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 163.21}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -84.41}
   m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 1, y: 0.5}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &782100390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1371,7 +1371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9097339100976359390, guid: 038be34de021aa044975b65d8c8aca99, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -43.3
+      value: -42.1
       objectReference: {fileID: 0}
     - target: {fileID: 9097339100976359390, guid: 038be34de021aa044975b65d8c8aca99, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1379,7 +1379,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9097339100976359390, guid: 038be34de021aa044975b65d8c8aca99, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -43.8
+      value: -43.4
       objectReference: {fileID: 0}
     - target: {fileID: 9097339100976359390, guid: 038be34de021aa044975b65d8c8aca99, type: 3}
       propertyPath: m_LocalRotation.w

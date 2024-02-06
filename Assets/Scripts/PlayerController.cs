@@ -12,6 +12,11 @@ public class PlayerController : NetworkBehaviour
     [SerializeField]
     private AudioListener audioListener;
 
+    [SerializeField]
+    private Camera OverheadCamera;
+    [SerializeField]
+    private AudioListener OverheadAudioListener;
+
     // create a list of colors
     public List<Color> colors = new List<Color>();
 
@@ -47,7 +52,15 @@ public class PlayerController : NetworkBehaviour
         controller = GetComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
 
-        cameraTransform = camera.transform;
+        if((int)OwnerClientId == 0)
+        {
+            cameraTransform = OverheadCamera.transform;
+        }
+        else
+        {
+            cameraTransform = camera.transform;
+        }
+        
 
         //networkObject = GetComponentInParent<NetworkObject>();
 
@@ -61,20 +74,16 @@ public class PlayerController : NetworkBehaviour
     {
         if(IsOwner) 
         { 
-            Debug.Log("am the owner");
-
-            Debug.Log((int)OwnerClientId);
-
             cineCamera.m_Priority = 10; 
         }
 
-        if(IsOwner == false) 
+        if(!IsOwner) 
         { 
-            Debug.Log("not the owner");
             cineCamera.m_Priority = 0; 
         }
 
         if (!IsOwner) return;
+
 
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && playerVelocity.y < 0)
@@ -120,8 +129,19 @@ public class PlayerController : NetworkBehaviour
         if (!IsOwner) return;
         // if the player is the owner of the object
         // enable the camera and the audio listener
-        audioListener.enabled = true;
-        camera.enabled = true;
+        if((int)OwnerClientId == 0)
+        {
+            OverheadAudioListener.enabled = true;
+            OverheadCamera.enabled = true;
+        }
+        else
+        {
+            audioListener.enabled = true;
+            camera.enabled = true;
+        }
+
+        //here is where I link up all the controls for client vs. host
+
     }
 
 
